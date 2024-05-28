@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: jioh
+    package:
+        name: jioh
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/jioh/tests
+            options:
+                outputdir: robot/jioh/results
+
+    robot_testdoc:
+        options:
+            path: robot/jioh/tests
+            output: robot/jioh/doc/jioh_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
